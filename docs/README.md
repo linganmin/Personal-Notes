@@ -12,4 +12,6 @@ cd personal_notes
 npm run dev
 
 # 根据终端输出在浏览器打开地址，默认是 ：http://localhost:8080/
+
+npm run build # 编译成html
 ```
