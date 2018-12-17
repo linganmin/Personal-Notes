@@ -18,6 +18,9 @@ module.exports = {
           [
             '/knowledges/git',
             'Git'
+          ],[
+            '/knowledges/redis',
+            'Redis'
           ]
         ]
       }, {
