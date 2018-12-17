@@ -1,23 +1,41 @@
 module.exports = {
-  title: "笔下花🌹",
+  title: "✏️下💐",
   description: "工作笔记及学习笔记，包括但不限于编程",
   themeConfig: {
     sidebar: [
       [
         "/",
-        "简介"
+        "空"
       ],
       {
-        title: 'Tools',
+        title: '知识',
         collapsable: true,
         children: [
           [
-            '/tools/vim',
+            '/knowledges/vim',
             'vim'
           ],
           [
-            '/tools/git',
+            '/knowledges/git',
             'Git'
+          ]
+        ]
+      }, {
+        title: '学习',
+        collapsable: true,
+        children: [
+          [
+            '/study/01',
+            '第一个'
+          ]
+        ]
+      }, {
+        title: '生活',
+        collapsable: true,
+        children: [
+          [
+            '/life/01',
+            '第一个'
           ]
         ]
       }
