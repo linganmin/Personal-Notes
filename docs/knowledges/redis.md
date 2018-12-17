@@ -14,7 +14,7 @@ Redis 的字符串是动态字符串，是可以修改的字符串，采用预�
 > set key value [EX seconds] [PX milliseconds] [NX|XX]
 
 ```bash
-set email saboran@163.com
+127.0.0.1:6379> set email saboran@163.com
 OK
 ```
 [点击阅读详细文档](http://redisdoc.com/string/set.html)
@@ -24,7 +24,7 @@ OK
 > get key
 
 ```bash
-get email
+127.0.0.1:6379> get email
 "saboran@163.com"
 ```
 [点击阅读详细文档](http://redisdoc.com/string/get.html)
@@ -35,7 +35,7 @@ get email
 > strlen key
 
 ```bash
-strlen email
+127.0.0.1:6379> strlen email
 (integer) 15
 ```
 [点击阅读详细文档](http://redisdoc.com/string/strlen.html)
@@ -46,7 +46,7 @@ strlen email
 > getrange key start end
 
 ```bash
-getrange email 8 10
+127.0.0.1:6379> getrange email 8 10
 "163" 
 ```
 [点击阅读详细文档](http://redisdoc.com/string/getrange.html)
@@ -56,17 +56,54 @@ getrange email 8 10
 > setrange key offset value
 
 ```bash
-setrange email 8 gmail.com
+127.0.0.1:6379> setrange email 8 gmail.com
 (integer) 17
 ```
+
+[点击阅读详细文档](http://redisdoc.com/string/setrange.html)
+
 
 ### 向字符串追加子串
 
 > append key value
 
 ```bash
-append email .xxx
+127.0.0.1:6379> append email .xxx
 (integer) 21
 get email
 "saboran@gmail.com.xxx"
 ```
+
+[点击阅读详细文档](http://redisdoc.com/string/append.html)
+
+
+### 计数器
+
+如果字符串的内容是一个整数，那么还可以将字符串当成计数器来使用
+
+```bash
+127.0.0.1:6379> set num 1
+OK
+127.0.0.1:6379> get num
+"1"
+```
+> incrby key increment
+
+> decrby key decrement
+
+```bash
+127.0.0.1:6379> incrby num 10
+(integer) 11
+127.0.0.1:6379> get num
+"11"
+127.0.0.1:6379> decrby num 2
+(integer) 9
+127.0.0.1:6379> get num
+"9"
+```
+
+#### 简写
+
+`incr key` 等于 `incrby key 1`
+
+`decr key` 等于 `decrby key 1`
