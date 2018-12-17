@@ -107,3 +107,149 @@ OK
 `incr key` 等于 `incrby key 1`
 
 `decr key` 等于 `decrby key 1`
+
+
+## List
+
+Redis中的list是用于存储多个有序的字符串，列表是一种比较灵活的数据结构可充当`堆栈`和`队列`的角色。
+
+在Redis中list的存储结构用的是链表（双向链表）而不是数组，因为它是链表，所以随机定位性能较弱，首尾插入删除性能好。
+
+`队列`/`堆栈`链表可以从表头和表尾追加移除元素，在Redis中`list`结构结合`rpush`、`rpop`、`lpush`、`lpop`四条命令，可以将链表作为队列或堆栈使用。
+
+### 右进左出
+```bash
+127.0.0.1:6379> rpush queue JS
+(integer) 1
+127.0.0.1:6379> rpush queue PHP Golang
+(integer) 3
+127.0.0.1:6379> lrange queue 0 -1 # 列出queue中所有的值
+1) "JS"
+2) "PHP"
+3) "Golang"
+127.0.0.1:6379> lpop queue
+"JS"
+127.0.0.1:6379> lpop queue
+"PHP"
+127.0.0.1:6379> lpop queue
+"Golang"
+127.0.0.1:6379> lrange queue 0 -1
+(empty list or set)
+```
+### 右进右出
+```bash
+127.0.0.1:6379> rpush languages zh
+(integer) 1
+127.0.0.1:6379> rpush languages en
+(integer) 2
+127.0.0.1:6379> rpush languages dz
+(integer) 3
+127.0.0.1:6379> lrange languages 0 -1
+1) "zh"
+2) "en"
+3) "dz"
+127.0.0.1:6379> rpop languages
+"dz"
+127.0.0.1:6379> rpop languages
+"en"
+127.0.0.1:6379> rpop languages
+"zh"
+```
+
+### list长度
+
+> llen key
+
+```bash
+127.0.0.1:6379> llen languages
+(integer) 0
+```
+
+### 读取指定位置的元素
+
+> lindex key index
+
+```bash
+127.0.0.1:6379> lindex languages 2
+"zh"
+```
+
+### 读取指定位置区间的元素
+
+> lrange key start stop
+
+```bash
+127.0.0.1:6379> lrange languages 1 2
+1) "en"
+2) "zh"
+
+# 获取list中的所有元素
+127.0.0.1:6379> lrange languages 0 -1
+1) "dz"
+2) "en"
+3) "zh"
+```
+
+### 修改元素
+
+> lset key index value
+
+```bash
+127.0.0.1:6379> lset languages 1 kr
+OK
+127.0.0.1:6379> lrange languages 0 -1
+1) "dz"
+2) "kr"
+3) "zh"
+```
+
+### 插入元素(极少使用)
+
+> linsert key BEFORE|AFTER pivot value
+
+```bash
+127.0.0.1:6379> linsert languages before zh jp
+(integer) 4
+127.0.0.1:6379> lrange languages 0 -1
+1) "dz"
+2) "kr"
+3) "jp"
+4) "zh"
+```
+
+### 删除元素
+
+>  lrem key count value
+
+```bash
+127.0.0.1:6379> lrem languages 1 dz
+(integer) 1
+127.0.0.1:6379> lrange languages 0 -1
+1) "kr"
+2) "jp"
+3) "zh"
+```
+
+### 定长列表 ???????
+
+> ltrim key start stop
+
+```bash
+
+```
+
+### 左进左出
+
+> lpush key value [value ...] # 左进
+
+> lpop key # 左出
+
+>  blpop key [key ...] timeout # 阻塞左出
+
+### 右进右出
+
+> rpush key value [value ...] # 左进
+
+> rpop key # 左出
+
+>  rlpop key [key ...] timeout # 阻塞左出
