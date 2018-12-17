@@ -1,6 +1,6 @@
 module.exports = {
-  title: "这是Demo啦",
-  description: "啦啦啦啦啦啦啦啦啦...",
+  title: "笔下花🌹",
+  description: "工作笔记及学习笔记，包括但不限于编程",
   themeConfig: {
     sidebar: [
       [
