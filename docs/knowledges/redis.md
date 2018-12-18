@@ -253,3 +253,10 @@ OK
 > rpop key # 左出
 
 >  rlpop key [key ...] timeout # 阻塞左出
+
+### 使用场景
+
+- lpush + lpop = stack(栈)
+- lpush + rpop = queue(队列)
+- lpush + ltrim = capped collection(有限集合)
+- lpush + brpop = message queue(消息队列)
