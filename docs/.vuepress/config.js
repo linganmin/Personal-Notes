@@ -29,7 +29,7 @@ module.exports = {
         children: [
           [
             '/study/01',
-            '第一个'
+            '负载均衡'
           ]
         ]
       }, {
