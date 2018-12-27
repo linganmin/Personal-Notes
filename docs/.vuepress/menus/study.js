@@ -2,7 +2,7 @@ module.exports = {
   menu: [
     [
       '/study/01',
-      '第一个'
+      '负载均衡'
     ]
   ]
 }
