@@ -1,3 +1,15 @@
+// knowledges
+const knowledges = require('./menus/knowledges')
+const KnowledgesMenu = knowledges.menu
+// study
+const study = require('./menus/study')
+const StudyMenu = study.menu
+// study
+const life = require('./menus/life')
+const LifeMenu = life.menu
+// docker
+const docker = require('./menus/docker')
+const DockerMenu = docker.menu
 module.exports = {
   title: "✏️下💐",
   description: "工作笔记及学习笔记，包括但不限于编程",
@@ -5,42 +17,24 @@ module.exports = {
     sidebar: [
       [
         "/",
-        "空"
+        "空空如也"
       ],
       {
         title: '知识',
         collapsable: true,
-        children: [
-          [
-            '/knowledges/vim',
-            'vim'
-          ],
-          [
-            '/knowledges/git',
-            'Git'
-          ],[
-            '/knowledges/redis',
-            'Redis'
-          ]
-        ]
+        children: KnowledgesMenu
       }, {
         title: '学习',
         collapsable: true,
-        children: [
-          [
-            '/study/01',
-            '负载均衡'
-          ]
-        ]
+        children: StudyMenu
       }, {
         title: '生活',
         collapsable: true,
-        children: [
-          [
-            '/life/01',
-            '第一个'
-          ]
-        ]
+        children: LifeMenu
+      }, {
+        title: 'Docker',
+        collapsable: true,
+        children: DockerMenu
       }
     ],
     nav: [{

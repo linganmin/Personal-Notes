@@ -7,9 +7,9 @@
 ```bash
 npm install -g vuepress
 
-git clone git@github.com:linganmin/personal_notes.git
+git clone git@github.com:linganmin/Personal-Notes.git
 
-cd personal_notes
+cd Personal-Notes
 
 npm run dev
 
