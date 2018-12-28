@@ -4,7 +4,10 @@ const KnowledgesMenu = knowledges.menu
 // study
 const study = require('./menus/study')
 const StudyMenu = study.menu
-// study
+// translations
+const translation = require('./menus/translation')
+const TransMenu = translation.menu
+// life
 const life = require('./menus/life')
 const LifeMenu = life.menu
 // docker
@@ -27,6 +30,10 @@ module.exports = {
         title: '学习',
         collapsable: true,
         children: StudyMenu
+      }, {
+        title: '译文',
+        collapsable: true,
+        children: TransMenu
       }, {
         title: '生活',
         collapsable: true,
