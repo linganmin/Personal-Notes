@@ -1,4 +1,4 @@
-## Vim编辑器常用命令
+## Vim 编辑器常用命令
 
 ```bash
 ctrl + f # 屏幕『向下』移动一页
@@ -33,3 +33,26 @@ ctrl + z #最小化
 
 fg # 恢复最小化
 ```
+
+## Linux 命令
+
+- df
+  - 显示磁盘统计空间
+    ```bash
+    df -h
+    文件系统        容量  已用  可用 已用% 挂载点
+    /dev/vda1        40G  5.3G   32G   15% /
+    devtmpfs        909M     0  909M    0% /dev
+    tmpfs           920M     0  920M    0% /dev/shm
+    tmpfs           920M  444K  919M    1% /run
+    tmpfs           920M     0  920M    0% /sys/fs/cgroup
+    tmpfs           184M     0  184M    0% /run/user/0
+    ```
+- free
+  - 于显示内存状态
+    ```bash
+    free -m
+    total        used        free      shared  buff/cache   available
+    Mem:           1838         265         981           0         591        1395
+    Swap:          2047           0        2047
+    ```
