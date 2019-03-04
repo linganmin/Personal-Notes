@@ -11,6 +11,10 @@ module.exports = {
     [
       '/knowledges/redis',
       'Redis'
+    ],
+    [
+      '/knowledges/regex',
+      '正则表达式'
     ]
   ]
 }
