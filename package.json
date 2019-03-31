@@ -8,6 +8,13 @@
     "dev": "vuepress dev docs",
     "build": "vuepress build docs"
   },
+  "devDependencies": {
+    "vuepress": "^0.14.10",
+    "webpack-dev-middleware": "3.6.0"
+  },
+  "resolutions": {
+    "webpack-dev-middleware": "3.6.0"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC"

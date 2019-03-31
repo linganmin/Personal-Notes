@@ -14,8 +14,13 @@ const LifeMenu = life.menu
 const docker = require('./menus/docker')
 const DockerMenu = docker.menu
 module.exports = {
-  title: "✏️下💐",
-  description: "工作笔记及学习笔记，包括但不限于编程",
+  locales: {
+    '/': {
+      lang: "zh-CN",
+      title: "✏️下💐",
+      description: "工作笔记及学习笔记，包括但不限于编程",
+    }
+  },
   themeConfig: {
     sidebar: [
       [
@@ -54,5 +59,4 @@ module.exports = {
       }
     ]
   }
-
 }
