@@ -17,7 +17,7 @@ module.exports = {
   locales: {
     '/': {
       lang: "zh-CN",
-      title: "✏️下💐",
+      title: "劝君惜取少年时",
       description: "工作笔记及学习笔记，包括但不限于编程",
     }
   },
