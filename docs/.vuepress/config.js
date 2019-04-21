@@ -25,7 +25,7 @@ module.exports = {
     sidebar: [
       [
         "/",
-        "空空如也"
+        "序"
       ],
       {
         title: '知识',
