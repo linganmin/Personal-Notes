@@ -1,9 +1,7 @@
-// knowledges
-const knowledges = require('./menus/knowledges')
-const KnowledgesMenu = knowledges.menu
+
 // study
-const study = require('./menus/study')
-const StudyMenu = study.menu
+const skills = require('./menus/skills')
+const SkillsMenu = skills.menu
 // translations
 const translation = require('./menus/translation')
 const TransMenu = translation.menu
@@ -28,13 +26,9 @@ module.exports = {
         "序"
       ],
       {
-        title: '知识',
+        title: '技术',
         collapsable: true,
-        children: KnowledgesMenu
-      }, {
-        title: '学习',
-        collapsable: true,
-        children: StudyMenu
+        children: SkillsMenu
       }, {
         title: '译文',
         collapsable: true,

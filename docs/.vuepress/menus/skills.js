@@ -1,0 +1,43 @@
+module.exports = {
+  menu: [
+    [
+      '/skills/tools/git',
+      'Git'
+    ],
+    [
+      '/skills/tools/redis',
+      'Redis'
+    ],[
+      '/skills/php/php',
+      'PHP'
+    ],[
+      '/skills/php/laravel',
+      'Laravel'
+    ],[
+      '/skills/golang/01',
+      'Golang'
+    ],[
+      '/skills/javascript/vuejs',
+      'VueJs'
+    ],[
+      '/skills/mysql/01',
+      'Mysql'
+    ],[
+      '/skills/tools/vim',
+      'Vim编辑器'
+    ],[
+      '/skills/tools/regex',
+      '正则表达式'
+    ],
+    [
+      '/skills/01',
+      '负载均衡',
+    ],[
+      '/skills/02',
+      '性能&高并发'
+    ],[
+      '/skills/03',
+      'Web开发的基础知识'
+    ]
+  ]
+}
