@@ -5,7 +5,7 @@
 
 ### 版本库的示意图
 
-![](http://ww1.sinaimg.cn/large/6aedb651gy1fsirsqqeptj20cq06iaa8.jpg)
+![](https://ww1.sinaimg.cn/large/6aedb651gy1fsirsqqeptj20cq06iaa8.jpg)
 
 ### 版本库命令说明
 - git init
