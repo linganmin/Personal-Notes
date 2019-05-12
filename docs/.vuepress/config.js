@@ -12,6 +12,19 @@ const LifeMenu = life.menu
 const docker = require('./menus/docker')
 const DockerMenu = docker.menu
 module.exports = {
+  head: [
+    ['link', { rel: 'icon', href: 'https://www.linganmin.cn/assets/img/logo.png' }],[
+      'script',{},`
+      var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?18e9f126f8c19b0e131010005cd017eb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+      `
+    ]
+  ],
   locales: {
     '/': {
       lang: "zh-CN",
