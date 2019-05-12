@@ -23,8 +23,8 @@ module.exports = {
       '/skills/mysql/01',
       'Mysql'
     ],[
-      '/skills/tools/vim',
-      'Vim编辑器'
+      '/skills/tools/linux',
+      'Linux'
     ],[
       '/skills/tools/regex',
       '正则表达式'
