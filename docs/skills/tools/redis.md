@@ -16,6 +16,35 @@ Redis 支持更加丰富的数据存储类型，String、Hash、List、Set 和 S
 
 - AOF 持久化（Append-Only-File），AOF 持久化是通过保存 Redis 服务器锁执行的写状态来记录数据库的。相当于备份数据库接收到的命令，所有被写入 AOF 的命令都是以 redis 的协议格式来保存的。
 
+## Redis过期机制
+
+Redis采用惰性删除和定期删除两种策略
+
+- 惰性删除
+  每次访问前先看看是不是过期了，过期的话就进行删除
+- 定期删除
+  ？？
+
+## 设置过期时间
+
+- 通用
+
+  ```bash
+  expire key time(以秒为单位)
+  ```
+
+- 字符串特有
+
+  ```bash
+  setex(string key, int seconds, string value)
+  ```
+
+## Pileline
+
+Redis本身是基于Request/Response协议的，正常情况下，客户端发送一个命令，等待Redis应答，Redis在接收到命令，处理后应答。在这种情况下，如果同时需要执行大量的命令，那就是等待上一条命令应答后再执行，这中间不仅仅多了RTT（Round Time Trip），而且还频繁的调用系统IO，发送网络请求。如下图。
+
+为了提升效率，这时候Pipeline出现了，它允许客户端可以一次发送多条命令，而不等待上一条命令执行的结果，这和网络的Nagel算法有点像（TCP_NODELAY选项）。不仅减少了RTT，同时也减少了IO调用次数（IO调用涉及到用户态到内核态之间的切换）
+
 ## Redis 类型
 
 ### String
