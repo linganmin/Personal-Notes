@@ -70,6 +70,17 @@
     - ksort() 函数用于对数组单元按照键名从低到高进行排序。
     - krsort() 函数用于对数组单元按照键名从高到低进行排序。
 
+- intval() 和 (int) 转换的区别
+  转换效率 (int) > intval()
+
+  - (int) 生成的 opcode 指令数少于 intval()；
+  - (int) 是直接使用“CAST”指令的方式来实现类型转换；
+  - intval() 是通过调用 zend_internal_function 类型的 intval 函数的方式来实现类型转换；
+
+## composer 自动加载原理
+
+composer加载核心思想是通过composer的配置文件在引用入口文件(autoload.php)时,将类和路径的对应关系加载到内存中,最后将具体加载的实现注册到spl_autoload_register函数中.最后将需要的文件包含进来.
+
 ## 魔术方法
 
 - __get & __set
@@ -78,8 +89,6 @@
 - __call & __callStatic
 
   当调用类中一个不存在或者没有权限访问的方法的时候，就会自动调用__call()方法。和__call对应静态方法的调用是__callStatic
-
-
 
 ## PHP 运行模式
 
