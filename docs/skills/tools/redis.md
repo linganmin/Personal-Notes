@@ -5,10 +5,10 @@
 Redis 支持更加丰富的数据存储类型，String、Hash、List、Set 和 Sorted Set。Memcached 仅支持简单的 key-value 结构。
 
 - String：key=>value set get decr incr
-- Hash: 存放结构化数据 hset hget hgetall
+- Hash: 存放结构化数据，比如用户信息，商品信息 hset hget hgetall
 - List: 消息队列、列表 lpush rpush lpop rpop lrange
 - Set: 不重复的无序集合，某些需要去重的列表 sadd spop smembers
-- Sorted Set 有序集合，比 set 多分数，根据分数自懂排序 zadd zrange zrem zcard
+- Sorted Set 有序集合，比 set 多分数，根据分数自懂排序，排行榜 zadd zrange zrem zcard
 
 ## Redis 如何实现持久化？
 
@@ -44,6 +44,32 @@ Redis采用惰性删除和定期删除两种策略
 Redis本身是基于Request/Response协议的，正常情况下，客户端发送一个命令，等待Redis应答，Redis在接收到命令，处理后应答。在这种情况下，如果同时需要执行大量的命令，那就是等待上一条命令应答后再执行，这中间不仅仅多了RTT（Round Time Trip），而且还频繁的调用系统IO。
 
 为了提升效率，这时候Pipeline出现了，它允许客户端可以一次发送多条命令，而不等待上一条命令执行的结果，这和网络的Nagel算法有点像（TCP_NODELAY选项）。不仅减少了RTT，同时也减少了IO调用次数（IO调用涉及到用户态到内核态之间的切换）
+
+## Redis 的线程模型
+
+Redis内部使用文件事件处理器`file event handler`，这个文件事件处理器是单线程的，所以Redis才叫单线程的模型。它采用IO多路复用机制，同时监听多个socket，根据socket上的事件来选择对应的事件处理器进行处理。
+
+redis-server 采用异步非阻塞模式，因为是单线程所以只会有一个命令被执行，所以大部分的处理都是原子性的。
+
+因为Redis命令是原子性，所以可以用来做并发处理（多个客户端同时执行decr,每次只会有一个客户端成功）。原子操作可以用来做并发控制。
+
+:::tip
+因为Redis是单线程的，所以如果某个命令被阻塞，则Redis整个服务会被阻塞。
+:::
+
+### 为啥 Redis 是单线程的也能有如此高的效率
+
+- 纯内存操作
+- 核心是基于非阻塞的IO多路复用机制
+- 单线程反而避免了多线程的频繁上下文切换问题
+
+## Redis热键
+
+在某些场景下，某些key被经常访问到，导致某台redis的负载过大
+
+### 解决
+
+使用取模的方式可以把热键散列到多台服务器中
 
 ## Redis 类型
 
