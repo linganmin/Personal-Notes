@@ -2,6 +2,14 @@
 
 ## 基础知识
 
+- isset() 和 empty() 的区别
+  - isset() 检查变量是否包含值`false`,`0`,`''`，当值为`null`或变量不存在时返回`false`,其余均返回`true`。
+  - empty() 检查变量是否为`''`,`0`,`null`,`false`,返回true,其余值均返回`false`
+- 字符串处理函数 区别 mb_ 系列函数
+  字符串处理函数是处理单字节字符的，如英文，数字；mb_ 系列函数可以有效的处理多字节字符，如中文，日文。如果使用单字节字符函数比如`substr()`截取带有中文的字符串时会出现乱码。
+- static、$this、self 区别
+  - todo
+  - todo
 - 面向对象的特征
   - 封装
     把客观的事物封装成抽象的类，类可以将自身的数据和方法给可信的类或对象操作，对不可信的进行隐藏信息。
@@ -77,6 +85,19 @@
   - (int) 生成的 opcode 指令数少于 intval()；
   - (int) 是直接使用“CAST”指令的方式来实现类型转换；
   - intval() 是通过调用 zend_internal_function 类型的 intval 函数的方式来实现类型转换；
+
+### 数组常用函数
+
+- array_chage_key_case(array $arr,[int CASE_LOWER|CASE_UPPER])
+  - 将数组的键全部小写|大写
+- array_chunk(array $arr,int $size,[bool $preserve_keys])
+  - 将一个数组分割成多个，其中每个单元数目由size决定，preserve_keys为true表示保留输入数组原来的键名，默认为false
+- array_column(array $arr,mixed $cloumn_key,[mixed $index_key])
+  - 返回多维数组指定为column_key列的值，如果指定了$index_key,则使用多维数组的该列的值作为返回数组对应的值的键
+- array_combine(array $keys,array $values)
+  - 创建一个数组，用一个$keys的值作为数组的键，用$values的值作为数组的值。$keys 和 $values 的数组长度要相同
+- array_count_values(array $arr)
+  - 统计数组中所有的值的出现次数,返回结果是一个数组，该数组的键是原数组的值，该数组的值是原数组的值出现的次数
 
 ## composer 自动加载原理
 
