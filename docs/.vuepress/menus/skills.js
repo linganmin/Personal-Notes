@@ -38,6 +38,9 @@ module.exports = {
     ],[
       '/skills/03',
       'Web开发的基础知识'
+    ],[
+      '/skills/04',
+      '数据结构'
     ]
   ]
 }
