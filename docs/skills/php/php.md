@@ -98,6 +98,22 @@
   - 创建一个数组，用一个$keys的值作为数组的键，用$values的值作为数组的值。$keys 和 $values 的数组长度要相同
 - array_count_values(array $arr)
   - 统计数组中所有的值的出现次数,返回结果是一个数组，该数组的键是原数组的值，该数组的值是原数组的值出现的次数
+- array_diff_assoc(array $arr1, array $arr2,[array $arr...])
+  - 带索引比较多个数组差集
+- array_diff_uassoc(array $arr1, array $arr2,[array $arr...])
+  - 用提供的回调函数做索引检查来计算数组的差集
+- array_diff_key(array $arr1, array $arr2,[array $arr...])
+  - 使用键名比较计算数组的差集
+- array_diff_ukey(array $arr1, array $arr2,[array $arr...])
+  - 用回调函数对键名比较计算数组的差集
+- array_diff(array $arr1, array $arr2,[array $arr...])
+  - 对比 array1 和其他一个或者多个数组，返回在 array1 中但是不在其他 array 里的值。
+- array_fill_keys(array $keys,mixed $value)
+  - 使用value参数的值作为值，使用keys数组中的键来填充一个数组
+- array_fill(int $start_index,int $num,mixed $value)
+  - 用value填充一个数组的num个条目，索引值从start_index开始
+- array_filter(array $array[,callable $callback,[,int $flag=0]])
+  - 依次将array数组的每个值传递到callback函数，如果callback函数返回true，则该值会在返回的数组中，数组的键名保持不变
 
 ## composer 自动加载原理
 
