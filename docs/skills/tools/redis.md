@@ -333,3 +333,21 @@ OK
 - lpush + rpop = queue(队列)
 - lpush + ltrim = capped collection(有限集合)
 - lpush + brpop = message queue(消息队列)
+
+## Redis 需要掌握的知识点
+
+- 架构
+  - 单线程
+- 5种数据结构及其使用场景
+- 操作命令
+- 慢查询分析
+- pipeline的使用
+- redis和lua脚本的使用
+- redis持久化
+  - rdb和aof区别及各自特点
+- redis复制
+- redis内存怎么管理
+  - 内存使用统计
+  - 内存回收策略
+  - 内存优化
+- redis集群
