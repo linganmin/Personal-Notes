@@ -10,6 +10,13 @@
 - static、$this、self 区别
   - todo
   - todo
+- 接口与抽象类应用场景区别
+  - 抽象类是用来捕捉子类的通用特性的
+  - 抽象类是 is a关系；而接口是has a关系
+  - 接口只有常量和方法，抽象类则包含普通类中的一切机构
+  - 接口中的方法都必须是public类型的，而抽象类则不受限制
+  - 一个类可以同时实现多个接口，但一个类只能继承一个抽象类
+  - 抽象类中可以定义普通的带有方法体的方法，而接口不行
 - 面向对象的特征
   - 封装
     把客观的事物封装成抽象的类，类可以将自身的数据和方法给可信的类或对象操作，对不可信的进行隐藏信息。
@@ -114,6 +121,22 @@
   - 用value填充一个数组的num个条目，索引值从start_index开始
 - array_filter(array $array[,callable $callback,[,int $flag=0]])
   - 依次将array数组的每个值传递到callback函数，如果callback函数返回true，则该值会在返回的数组中，数组的键名保持不变
+- array_flip(array $array)
+  - 交换数组中的键和值
+- array_intersect_assoc(array $arr1, array $arr2[,array $arr3])
+  - 带索引检查计算数组的交集
+- array_intersect_key(array $arr1, array $arr2[,array $arr3])
+  - 使用键名比较计算数组的交集
+- array_intersect(array $arr1, array $arr2[,array $arr3])
+  - 计算数组的交集，返回结果保留原键名不变
+- array_key_exists(mixed $key , array $array)
+  - 检查数组中是否有指定的键名或索引
+- array_key_first(array $array)
+  - 获取数组的第一个key
+- array_key_last(array $array)
+  - 获取数组的最后一个key
+- array_keys(array $array)
+  - 获取数组的所有key
 
 ## composer 自动加载原理
 
