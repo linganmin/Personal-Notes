@@ -4,7 +4,7 @@
 
 ### 版本库的示意图
 
-![](https://ww1.sinaimg.cn/large/6aedb651gy1fsirsqqeptj20cq06iaa8.jpg)
+![](https://graph.linganmin.cn/190720/7174e3058e78ea02b2312be31b79a877?x-oss-process=image/format,webp/quality,q_60)
 
 ### 版本库命令说明
 

@@ -344,7 +344,7 @@ PHP解释器在执行PHP脚本时会解析PHP脚本代码，把PHP代码编译�
   - Nginx Handler 顺序将每一个响应发送给客户端
 
 - 一个完整的 web 请求
-  ![web请求](https://ws1.sinaimg.cn/large/6aedb651gy1g2yvjvw2o1j20je07owem.jpg)
+  ![web请求](https://graph.linganmin.cn/190720/5166133f9e2ff9437b5c29600edce1bb?x-oss-process=image/format,webp/quality,q_60)
 
 ### Nginx 和 PHP-FPM两种通信方式
 

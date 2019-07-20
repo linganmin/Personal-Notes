@@ -13,7 +13,7 @@ const docker = require('./menus/docker')
 const DockerMenu = docker.menu
 module.exports = {
   head: [
-    ['link', { rel: 'icon', href: 'https://www.linganmin.cn/assets/img/logo.png' }],[
+    ['link', { rel: 'icon', href: 'https://graph.linganmin.cn/2019-07-14/logo.png?x-oss-process=image/format,webp/quality,q_60' }],[
       'script',{},`
       var _hmt = _hmt || [];
 (function() {
