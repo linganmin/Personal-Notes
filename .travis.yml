@@ -10,7 +10,6 @@ before_install:
   - ls -al ~/.ssh
   - touch ~/.ssh/id_rsa
   - ls -al ~/.ssh
-  - openssl aes-256-cbc -K $encrypted_504d3c551bdc_key -iv $encrypted_504d3c551bdc_iv 
-    - in id_rsa.enc -out ~/.ssh/id_rsa -d
+  - openssl aes-256-cbc -K $encrypted_504d3c551bdc_key -iv $encrypted_504d3c551bdc_iv -in id_rsa.enc -out ~/.ssh/id_rsa -d
 after_success:
   - ssh travis@47.96.70.2 -o StrictHostKeyChecking=no
