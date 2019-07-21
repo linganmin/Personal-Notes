@@ -19,8 +19,6 @@ then
   git pull origin master
   yarn
   yarn build
-  git status
-  git diff
 
 remotessh
 
