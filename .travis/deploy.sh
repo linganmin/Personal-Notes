@@ -5,12 +5,10 @@ deploy_env=$1;
 
 if [ $deploy_env == "dev" ]
 then
-  # todo
-
+  echo "dev"
 elif [ $deploy_env == "stgaing" ]
 then
-  # todo
-
+  echo "stagig"
 elif [ $deploy_env == "prod" ]
 then
   
@@ -21,4 +19,10 @@ then
   git pull
 
 remotessh
+
 fi
+
+# echo $deploy_env;
+# if
+# ssh travis@47.96.70.2
+
