@@ -12,7 +12,7 @@ then
 elif [ $deploy_env == "prod" ]
 then
   
-  ssh travis@47.96.70.2 <<remotessh
+  ssh travis@47.96.70.2 -o StrictHostKeyChecking=no <<remotessh
 
   cd /data/wwwroot/notes.linganmin.cn
   git checkout master
