@@ -16,8 +16,8 @@ then
 
   cd /data/wwwroot/notes.linganmin.cn
   git pull
-  # yarn
-  # yarn build
+  yarn
+  yarn build
   exit
 remotessh
 
