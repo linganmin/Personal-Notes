@@ -7,6 +7,8 @@ branchs:
 script:
   - yarn build
 before_install:
+  - tree ~
+  - ls -al ~
   - touch ~/.ssh/id_rsa
   - openssl aes-256-cbc -K $encrypted_504d3c551bdc_key -iv $encrypted_504d3c551bdc_iv -in id_rsa.enc -out ~\/.ssh/id_rsa -d
 after_success:
