@@ -16,7 +16,7 @@ then
 
   cd /data/wwwroot/notes.linganmin.cn
   git checkout master
-  git pull
+  git pull origin master
 
 remotessh
 
