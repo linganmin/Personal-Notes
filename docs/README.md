@@ -1,8 +1,8 @@
+[![Build Status](https://travis-ci.com/linganmin/Personal-Notes.svg?branch=master)](https://travis-ci.com/linganmin/Personal-Notes)
+
 # 劝君惜取少年时
 
 记录自己的工作遇到的问题、学习的笔记心得或者生活中一些有趣的事儿。包括但不局限于编程。
-
-[![Build Status](https://travis-ci.com/linganmin/Personal-Notes.svg?branch=master)](https://travis-ci.com/linganmin/Personal-Notes)
 
 - install vuepress
 
