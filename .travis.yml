@@ -1,0 +1,10 @@
+language: node_js
+node:
+  - '12.4.0'
+branchs:
+  only:
+    - master
+before_install:
+  - cnpm install
+script:
+ - npm run build
