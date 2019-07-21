@@ -15,11 +15,10 @@ then
   ssh travis@47.96.70.2 -o StrictHostKeyChecking=no <<remotessh
 
   cd /data/wwwroot/notes.linganmin.cn
-  git checkout master
-  git pull origin master
+  git pull
   yarn
   yarn build
-
+  exit
 remotessh
 
 fi
