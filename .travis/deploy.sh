@@ -17,6 +17,8 @@ then
   cd /data/wwwroot/notes.linganmin.cn
   git checkout master
   git pull origin master
+  yarn
+  yarn build
 
 remotessh
 
