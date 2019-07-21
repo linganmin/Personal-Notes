@@ -16,7 +16,6 @@ then
 
   cd /data/wwwroot/notes.linganmin.cn
   git pull
-  git commit -am "merge"
   # yarn
   # yarn build
   exit
