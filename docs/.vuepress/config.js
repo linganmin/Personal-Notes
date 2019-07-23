@@ -8,6 +8,9 @@ const TransMenu = translation.menu
 // life
 const life = require('./menus/life')
 const LifeMenu = life.menu
+// life
+const books = require('./menus/books')
+const BooksMenu = books.menu
 // docker
 const docker = require('./menus/docker')
 const DockerMenu = docker.menu
@@ -54,6 +57,10 @@ module.exports = {
         title: 'Docker',
         collapsable: true,
         children: DockerMenu
+      }, {
+        title: '读书笔记',
+        collapsable: true,
+        children: BooksMenu
       }
     ],
     nav: [{
