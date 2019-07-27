@@ -33,8 +33,6 @@ remotessh
 
   chmod -R +r docs/.vuepress/dist
 
-  git stash
-  
   rsync -azr -vv --delete  docs/.vuepress/dist/ travis@47.96.70.2:/data/wwwroot/notes.linganmin.cn/
 
   ssh -t travis@47.96.70.2 -o StrictHostKeyChecking=no <<remotessh
