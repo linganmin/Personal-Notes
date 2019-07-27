@@ -7,7 +7,7 @@
 - install vuepress
 
 ```bash
-npm install -g vuepress
+npm i -g vuepress
 ```
 
 - clone this repo
