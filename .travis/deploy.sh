@@ -12,7 +12,7 @@ then
 elif [ $deploy_env == "prod" ]
 then
   
-  ssh travis@47.96.70.2 -o StrictHostKeyChecking=no <<remotessh
+  ssh -t travis@47.96.70.2 -o StrictHostKeyChecking=no <<remotessh
 
   cd /data/wwwroot
 
@@ -31,13 +31,17 @@ remotessh
 
   rm -rf node_modules
 
-  chmod -R +r public
+  chmod -R +r docs/.vuepress/dist
 
   rsync -azr -vv --delete  docs/.vuepress/dist/ travis@47.96.70.2:/data/wwwroot/notes.linganmin.cn/
 
+  ssh -t travis@47.96.70.2 -o StrictHostKeyChecking=no <<remotessh
   cd /data/wwwroot/
 
   sudo chown -R www:www notes.linganmin.cn
+  
+  exit
+remotessh
 
 fi
 
