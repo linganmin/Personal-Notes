@@ -14,16 +14,31 @@ then
   
   ssh travis@47.96.70.2 -o StrictHostKeyChecking=no <<remotessh
 
-  cd /data/wwwroot/notes.linganmin.cn
-  git pull
-  yarn
-  yarn build
-  exit
+  cd /data/wwwroot
+
+  if [ ! -d "notes.linganmin.cn" ]; then
+    sudo mkdir notes.linganmin.cn
+  fi
+
+  sudo chown -R travis:travis notes.linganmin.cn
+
+  exit;
 remotessh
+
+  yarn
+
+  yarn build
+
+  rm -rf node_modules
+
+  chmod -R +r public
+
+  rsync -azr -vv --delete  docs/.vuepress/dist/ travis@47.96.70.2:/data/wwwroot/notes.linganmin.cn/
+
+  cd /data/wwwroot/
+
+  sudo chown -R www:www notes.linganmin.cn
 
 fi
 
-# echo $deploy_env;
-# if
-# ssh travis@47.96.70.2
 
