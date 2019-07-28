@@ -19,18 +19,7 @@ notifications:
     on_success: always
     on_failure: always
 deploy:
-  # deploy dev to dev enviroment
-  # - provider: script
-  #   script: bash .travis/deploy.sh dev
-  #   on:
-  #     branch: dev
-  # deploy release to staging enviroment
-  # - provider: script
-  #   script: bash .travis/deploy.sh staging
-  #   on:
-  #     branch: release
-  # deploy master to staging prod
-  - provider: script
-    script: bash .travis/deploy.sh prod
-    on:
-      branch: master
+- provider: script
+  script: bash .travis/deploy.sh prod
+  on:
+    branch: master
