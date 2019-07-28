@@ -12,7 +12,7 @@ then
 elif [ $deploy_env == "prod" ]
 then
   
-  ssh -t travis@47.96.70.2 -o StrictHostKeyChecking=no <<remotessh
+  ssh -t deployer@47.96.70.2 -o StrictHostKeyChecking=no <<remotessh
 
   cd /data/wwwroot
 
@@ -20,7 +20,7 @@ then
     sudo mkdir notes.linganmin.cn
   fi
 
-  sudo chown -R travis:travis notes.linganmin.cn
+  sudo chown -R deployer:deployer notes.linganmin.cn
 
   exit;
 remotessh
@@ -33,9 +33,9 @@ remotessh
 
   chmod -R +r docs/.vuepress/dist
 
-  rsync -azr -vv --delete  docs/.vuepress/dist/ travis@47.96.70.2:/data/wwwroot/notes.linganmin.cn/
+  rsync -azr -vv --delete  docs/.vuepress/dist/ deployer@47.96.70.2:/data/wwwroot/notes.linganmin.cn/
 
-  ssh -t travis@47.96.70.2 -o StrictHostKeyChecking=no <<remotessh
+  ssh -t deployer@47.96.70.2 -o StrictHostKeyChecking=no <<remotessh
   cd /data/wwwroot/
 
   sudo chown -R www:www notes.linganmin.cn
