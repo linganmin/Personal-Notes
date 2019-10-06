@@ -1,6 +1,10 @@
 module.exports = {
   menu: [
     [
+      '/skills/tools/init-centos',
+      '裸装CentOS后的一些常规操作'
+    ],
+    [
       '/skills/tools/git',
       'Git'
     ],
