@@ -95,6 +95,8 @@ git log --pretty=oneline # 查看提交日志，在一行展示，更漂亮
 git reset --hard [commit id] # 通过git log 查看提交历史以确定要回到的位置，并拿到想回到的commit id 执行之
 
 git reflog # 查看所有执行的git命令 可以用来查找回滚之前的 commit id 在使用git reset --hard 回滚过去
+
+git revert -n [commit id] # 丢弃commit
 ```
 
 ## 标签
