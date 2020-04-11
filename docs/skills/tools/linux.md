@@ -62,6 +62,15 @@ fg # 恢复最小化
     Swap:          2047           0        2047
     ```
 
+- cat 文件1 文件2 | sort | uniq -d | wc -l
+  - 对比两个文件的交集数量
+
+- find / -type f -size +50000k -exec ls -lh {} \; | grep -v "/home/super"
+  - 查询大于 50M 的文件，忽略 /home/super 目录
+
+- tail -n +n old_file > new_file
+  - 删除文件的前 n-1 行到新文件
+
 - 怎么查看各个 cpu 的资源占用情况？
   
   这个就是 top 命令进去之后按数字 1 了
