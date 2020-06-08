@@ -3,16 +3,19 @@
 ## 编程
 
 - Homebrew
-  - 软件管理 (https://brew.sh/index_zh-cn)[https://brew.sh/index_zh-cn]
+  - 软件包管理工具
+  - [https://brew.sh/index_zh-cn](https://brew.sh/index_zh-cn)
   - 举栗：
 
     ```bash
       brew install git
     ```
+
 - PHPstorm
   - 重型PHP的IDE，官网：https://www.jetbrains.com/phpstorm/
 - Vscode
-  - coding, 轻量级。写前端、Golang比较舒服。(https://code.visualstudio.com/)[https://code.visualstudio.com/]
+  - coding, 轻量级。写前端、Golang比较舒服。
+  - [https://code.visualstudio.com/](https://code.visualstudio.com/)
 - Iterm2
   - 终端
   - 参考配置教程：[https://learnku.com/articles/5564/mac-terminal-configuration-item2-oh-my-zsh-3024night-color-scheme](https://learnku.com/articles/5564/mac-terminal-configuration-item2-oh-my-zsh-3024night-color-scheme)
